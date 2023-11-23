@@ -17,6 +17,7 @@ Welcome to the XV Quiz for CSL 3030 - Operating Systems!
    - b. A Unix-like operating system
    - c. A file system
    - d. An assembly language
+   
 
 #### Question 2: Architecture
 2. XV6 is based on which earlier operating system?
@@ -24,6 +25,8 @@ Welcome to the XV Quiz for CSL 3030 - Operating Systems!
    - b. Linux
    - c. BSD
    - d. DOS
+   
+
 
 #### Question 3: File System
 3. Which file system is used in XV6?
@@ -31,6 +34,7 @@ Welcome to the XV Quiz for CSL 3030 - Operating Systems!
    - b. NTFS
    - c. ext4
    - d. simple
+   - Answer
 
 #### Question 4: System Calls
 4. How are system calls implemented in XV6?
@@ -117,3 +121,53 @@ Welcome to the XV Quiz for CSL 3030 - Operating Systems!
 
 ## Answers
 Please write your answers here
+
+- (b)  A Unix-like operating system
+- (c) BSD
+- (d) Simple
+- (b) Interrupts
+- (a) 128
+- (c) sh
+- (a) Round-robin
+- (a) Paging
+- (d) both b and c
+- (b) No
+- (c) MIT
+
+## Theoritical Answers
+
+12. different states a process can be in within the XV6 operating system are as follows: 
+      - - Ready
+      - - Running
+      - - Sleeping
+      - - Zombie
+      - - Unused
+
+13. XV6 follows the hierarichal structure to store the files. It includes: 
+      - - Directories: Directory to the file stored in the system
+      - - InNodes: Stores the meta data about the files
+
+14. System calls: These are the function calls made by the programs to access the kernel. Through these calls we can directly access the hardware resourcess (i.e. IO etc.). Ex: fork()
+
+   Library functions: These are function calls which execute in the user mode and don't need admin permissions to execute. We can't directly access the hardware resources through these calls. Ex: any library function like printf()
+
+
+15. In XV6, paging divides the process memory present in the secondary memory into pages and calls them into main memory when a page is requested by the processor. These pages when present in the RAM are called frames. This helps in the proper utilization of the RAM since it reduces the amount of unused memory in the RAM, allowing the machine to do multi processing. Also, this introduces the concept of virtual memory, which allows the users to load a process with memory size greater than the RAM size itself.
+
+16. Three shell commands that I can remind are as follows: 
+   - - 'ls': Gets all the files and directories present in a particular directory
+   - - 'cd': Changes the root directory of the current shell
+   - - 'mkdir': Creates a directory (folder)
+
+17. Process synchronization in XV6 is implemented through locks which are similar to semaphores which we studied in the course. They lock the critical section when some process is accessing the resource. This is essential to prevent data inconsistencies in the process memory.
+
+18. Interrupts are used to handle events that occur synchronously with respect tot the CPU. They are handled by the interrupt handler, which is a function that is called when an interrupt occurs. The interrupt handler then performs the necessary actions to handle the interrupt. Interrupts are important because they allow the CPU to handle events that occur asynchronously with respect to the CPU.
+
+19. Virtual memory is a memory management technique that allows the operating system to use more memory than is physically available.
+
+20. Following steps are performed: 
+   - - computer is powered on.
+   - - BIOS is loaded
+   - - BIOS loads the loader
+   - - loader loads the kernel
+   - - kernel intializes the other programs requested by the user.
